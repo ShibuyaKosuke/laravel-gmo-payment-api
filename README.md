@@ -1,7 +1,6 @@
 # laravel-gmo-payment-api
 
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
-![Packagist PHP Version Support](https://img.shields.io/packagist/php-v/ShibuyaKosuke/laravel-gmo-payment-api)
 
 ## Install
 
