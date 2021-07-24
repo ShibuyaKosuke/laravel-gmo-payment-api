@@ -36,7 +36,7 @@ GmoApi::saveMember([
 ]);
 ```
 
-# How to use fake response in test code.
+## How to use fake response in test code.
 
 ```php
 // On Success
@@ -87,6 +87,10 @@ $response = GmoApi::setFake([
         'TokenType'       => '1',
         'RetUrl'          => 'https://example.com/xxxxx'
     ]);
+```
 
+## Package testing
 
+```bash
+./vendor/bin/testbench package:test
 ```
