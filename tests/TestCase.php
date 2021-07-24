@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Http;
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
 use ShibuyaKosuke\LaravelGmoPaymentApi\Facades\GmoApi;
 use ShibuyaKosuke\LaravelGmoPaymentApi\GmoPaymentApi;
+use ShibuyaKosuke\LaravelGmoPaymentApi\Providers\GmoServiceProvider;
 
 /**
  * Class TestCase
@@ -40,5 +41,27 @@ abstract class TestCase extends OrchestraTestCase
             'gmo_shop_id' => config('gmo_api.gmo_shop_id', 'gmo_shop_id'),
             'gmo_shop_password' => config('gmo_api.gmo_shop_password', 'gmo_shop_password')
         ]);
+    }
+
+    /**
+     * @param \Illuminate\Foundation\Application $app
+     * @return string[]
+     */
+    protected function getPackageProviders($app)
+    {
+        return [
+            GmoServiceProvider::class,
+        ];
+    }
+
+    /**
+     * @param \Illuminate\Foundation\Application $app
+     * @return string[]
+     */
+    protected function getPackageAliases($app)
+    {
+        return [
+            'GmoApi' => GmoApi::class,
+        ];
     }
 }
