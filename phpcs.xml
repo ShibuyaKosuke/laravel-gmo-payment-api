@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<ruleset name="PSR12/Laravel">
+    <description>PSR12 compliant rules and settings for Laravel</description>
+
+    <arg name="extensions" value="php"/>
+
+    <rule ref="PSR12"/>
+
+    <rule ref="Squiz.Commenting.FunctionComment">
+        <exclude name="Squiz.Commenting.FunctionComment.SpacingAfterParamName"/>
+        <exclude name="Squiz.Commenting.FunctionComment.MissingParamComment"/>
+        <exclude name="Squiz.Commenting.FunctionComment.SpacingAfterParamType"/>
+        <exclude name="Squiz.Commenting.FunctionComment.TypeHintMissing"/>
+        <exclude name="Squiz.Commenting.FunctionComment.EmptyThrows"/>
+        <exclude name="Squiz.Commenting.FunctionComment.ParamCommentFullStop"/>
+        <exclude name="Squiz.Commenting.FunctionComment.ScalarTypeHintMissing"/>
+        <exclude name="Squiz.Commenting.FunctionComment.ParamCommentNotCapital"/>
+    </rule>
+
+    <rule ref="Generic.Files.LineLength">
+        <properties>
+            <property name="lineLimit" value="120"/>
+            <property name="absoluteLineLimit" value="0"/>
+        </properties>
+    </rule>
+
+    <rule ref="Squiz.Commenting.VariableComment"/>
+
+    <arg name="colors"/>
+
+    <arg value="ps"/>
+
+    <exclude-pattern>/vendor/</exclude-pattern>
+    <exclude-pattern>/tests/</exclude-pattern>
+</ruleset>

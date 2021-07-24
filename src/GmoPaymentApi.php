@@ -39,6 +39,7 @@ class GmoPaymentApi
 
     /**
      * Timeout seconds
+     * @var integer
      */
     protected int $timeout = 10;
 
