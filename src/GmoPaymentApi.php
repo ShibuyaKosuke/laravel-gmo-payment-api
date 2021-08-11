@@ -5,7 +5,6 @@ namespace ShibuyaKosuke\LaravelGmoPaymentApi;
 use GuzzleHttp\Promise\PromiseInterface;
 use Illuminate\Config\Repository;
 use Illuminate\Http\Client\Response;
-use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Http;
 use ShibuyaKosuke\LaravelGmoPaymentApi\Concerns\GmoApiMember;
 use ShibuyaKosuke\LaravelGmoPaymentApi\Concerns\GmoCreditCard;
@@ -162,16 +161,16 @@ class GmoPaymentApi
             }
         }
 
-        if (Arr::has($fillable, 'SiteID')) {
+        if (in_array('SiteID', $fillable, true)) {
             $data['SiteID'] = $this->site_id;
         }
-        if (Arr::has($fillable, 'SitePass')) {
+        if (in_array('SitePass', $fillable, true)) {
             $data['SitePass'] = $this->site_password;
         }
-        if (Arr::has($fillable, 'ShopID')) {
+        if (in_array('ShopID', $fillable, true)) {
             $data['ShopID'] = $this->shop_id;
         }
-        if (Arr::has($fillable, 'ShopPass')) {
+        if (in_array('ShopPass', $fillable, true)) {
             $data['ShopPass'] = $this->shop_password;
         }
 
