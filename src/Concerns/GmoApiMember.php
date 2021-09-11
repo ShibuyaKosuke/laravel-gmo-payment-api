@@ -154,7 +154,7 @@ trait GmoApiMember
         ];
         $data = $this->checkParams($fillable, $data);
 
-        $endpoint = 'SaveCard';
+        $endpoint = 'SearchCard';
         return $this->postHttp($endpoint, $data);
     }
 
